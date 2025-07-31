@@ -1,0 +1,351 @@
+/*----------CARD SECTION-----------*/
+
+.container-card-section{
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-top: -5em;
+    gap: 4em;
+    position: relative;
+    z-index: 2;
+}
+
+.card{
+    position: relative;
+    z-index: 3;
+    border: 1px solid black;
+    max-width: 230px;
+    text-align: center;
+    padding: 2em .5em;
+    background-color: var(--tertiary-color);
+    box-shadow: -10px 0 10px rgba(0,0,0, 0.1);
+}
+
+
+.img-title-card{
+    border-bottom: 1px solid rgb(0, 0, 0) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    gap: 1em;
+    column-gap: 2em;
+    height: 150px;
+    max-height: 150px;
+}
+
+.img-title-card img{
+    margin: 0;
+    padding: 0;
+    width: 30%;
+}
+
+.img-title-card h2{
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.img-title-card .h2-one-title{
+    margin-top: .5em;
+}
+
+.card p{
+    margin: 1.5em 0;
+    color: var(--quinary-color);
+}
+
+.card button{
+    width: 100%;
+    padding: .5em;
+    border: none;
+    border-radius: 2em;
+    color: var(--tertiary-color);
+    font-size: 1em;
+    background-color: var(--primary-color) ;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    
+}
+.card button:hover{
+    transform: scale(1.05);
+    
+}
+
+
+/*----------CARD SECTION ENDDDDDD-----------*/
+
+/*----------ESSAY SECTION-----------*/
+
+.essay-section{
+    background-color: var(--quaternary-color);
+    padding: 3em;
+    margin-top: 3em;
+}
+
+.essay-section-wrap{
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+.essay-section-wrap2{
+    padding-top: 3em;
+}
+
+.essay-img{
+    width: 46%; 
+    height: 480px;
+    background-image: url('okeykat-w6elADh_jww-unsplash.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+}
+
+.essay-img2{
+    width: 46%; 
+    height: 480px;
+    background-image: url('anastasia-ulyanova-aFqfi1ASUJc-unsplash.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.essay-text{
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.essay-text h2{
+    color: var(--blackText);
+    margin: 0;
+    margin-bottom: .5em;
+    font-size: 2.5rem;
+}
+.essay-text p{
+    color: var(--blackText);
+    margin: 0;
+    margin: .5em 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.essay-text p span{
+    font-weight: 600;
+}
+
+@media(max-width: 805px){
+    .essay-section{
+        padding: 2em 0;
+    }
+
+    .essay-section-wrap{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .essay-section-wrap2{
+        flex-direction: column-reverse;
+    }
+
+    .essay-section-wrap .essay-text{
+        width: 100%;
+    }
+
+    .essay-img{
+        width: 100%;
+        max-height: 240px;
+    }
+    .essay-img2{
+        width: 100%;
+        max-height: 240px;
+    }
+
+    .essay-section-wrap .essay-text h2{
+        text-align: center;
+        margin-bottom: .5em;
+        font-size: 2.5rem;
+    }
+    .essay-section-wrap .essay-text p{
+        margin: .5em 0;
+        font-size: 1em;
+        font-weight: 300;
+    }
+
+}
+
+/*----------ESSAY SECTION ENDD-----------*/
+
+/*----------LOCATION SECTION-----------*/
+.location-section{
+    margin-top: 3em;
+}
+
+.location-wrap{
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.location-map{
+    width: 46%; 
+    height: 480px;
+    position: relative;
+    background-image: url('okeykat-w6elADh_jww-unsplash.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    overflow: hidden;
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+}
+
+.location-text-wrap{
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.location-text-wrap h2{
+    color: var(--blackText);
+    margin: 0;
+    margin-bottom: .5em;
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+.location-text-wrap p{
+    color: var(--blackText);
+    margin: 0;
+    margin: .5em 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+@media(max-width: 805px){
+    .location-section{
+        padding: 2em 0;
+    }
+
+    .location-wrap{
+        flex-direction: column;
+        align-items: center;
+    }
+    .location-wrap .location-text-wrap{
+        width: 100%;
+    }
+    .location-map{
+        width: 100%;
+        max-height: 240px;
+    }
+    .location-text-wrap h2{
+        margin-bottom: .5em;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .location-text-wrap p{ 
+        margin: .5em 0;
+        font-size: 1em;
+        font-weight: 300;
+    }
+
+}
+/*----------LOCATION SECTION ENDDD-----------*/
+
+/*----------CONTACT US BANNER-----------*/
+
+.banner-section{
+    position: relative;
+    background-image: url(meizhi-lang-o0YhQo9ak7Y-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    display: flex;
+    margin-top: 4em;
+}
+.banner-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.747); 
+    z-index: 1; 
+}
+
+.banner-wrap{
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+.banner-wrap h2{
+    color: var(--tertiary-color);
+    margin: 1em 0;
+    font-size: 2em;
+}
+.banner-wrap p{
+    color: var(--tertiary-color);
+    margin: 0;
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 1em;
+    color: var(--quaternary-color);
+}
+.banner-wrap button{
+    padding: .5em 1.5em;
+    border: 1px solid #D84040;
+    background-color: transparent;
+    color: var(--tertiary-color);
+    font-size: 1em;
+    font-weight: 300;
+    outline: none;
+    transition: ease-out 0.3s;
+}
+.banner-wrap button:hover{
+    background-color: #D84040;
+    cursor: pointer;
+    
+}
+
+/*----------CONTACT US BANNER ENDDD-----------*/
+
+/*------------------------------------MAIN STYLE ENDDDDD------------------------------------*/
