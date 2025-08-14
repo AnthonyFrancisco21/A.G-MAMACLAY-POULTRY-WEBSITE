@@ -80,12 +80,12 @@
 
                 <h2>Categories</h2>
                 <div class="categories-wrap-btn">
-                    <button class="categories-btn" onclick="feedsFunction()">All Products</button>
-                    <button class="categories-btn" id="feedsCategories" onclick="feedsFunction()">Feeds</button>
-                    <button class="categories-btn" id="supplementCategories" onclick="feedsFunction()">Supplements</button>
-                    <button class="categories-btn" id="farmCategories" onclick="feedsFunction()">Farm & Game Equipment</button>
-                    <button class="categories-btn" id="petsCategories" onclick="feedsFunction()">Pet Nutrition & Accessories</button>
-                    <button class="categories-btn" onclick="feedsFunction()">Others</button>
+                    <button class="categories-btn" data-category="" onclick="feedsFunction()">All Products</button>
+                    <button class="categories-btn" data-category="feeds" id="feedsCategories" onclick="feedsFunction()">Feeds</button>
+                    <button class="categories-btn" data-category="Supplements" id="supplementCategories" onclick="feedsFunction()">Supplements</button>
+                    <button class="categories-btn" data-category="Equipment" id="farmCategories" onclick="feedsFunction()">Farm & Game Equipment</button>
+                    <button class="categories-btn" data-category="Accessories" id="petsCategories" onclick="feedsFunction()">Pet Nutrition & Accessories</button>
+                    <button class="categories-btn" data-category="others" onclick="feedsFunction()">Others</button>
                 </div>
                 
             </div>
@@ -105,135 +105,12 @@
             
             <div class="item-card-wrap">
 
-                <div class="item">
+                <!-- <div class="item">
                     <div class="item-img"></div>
                     <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
+                </div> -->
 
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
                 
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-img"></div>
-                    <p>Lorem ipsum dolor dadfasda asdasdaasdasadf</p>
-                </div>
 
                 
             </div>
@@ -294,7 +171,7 @@
         </div>
         <br>
         <div class="footer-bottom-wrap">
-            <p>&copy; 2025 A.G MAMACLAY POULTRY SUPPLY. All rights reserved.</p>
+            <p>&copy; <span class="yearCopyRights"></span> A.G MAMACLAY POULTRY SUPPLY. All rights reserved.</p>
             <p class="myname">Website by: Anthony Francisco</p>
         </div>
 
