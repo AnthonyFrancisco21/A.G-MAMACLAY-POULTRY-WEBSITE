@@ -77,7 +77,7 @@ The website highlights the shop’s offerings, shop information, and contact det
 
   ---
 
-**Future Features**
+ ## Future Features
 
  - Integration with the AG-MamaClay Dashboard for inventory management.
  - Expanded store information, including history and services.
