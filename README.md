@@ -2,7 +2,7 @@ AG-MAMACLAY-POULTRY-WEBSITE
 ==========================
 
 This is a simple informational website for **A-G Mamaclay Poultry Shop**, designed to showcase the shop, promote products, and provide important details to customers.  
-The website highlights the shop’s offerings, branch information, and contact details, making it easy for customers to learn about the business and browse products online.
+The website highlights the shop’s offerings, shop information, and contact details, making it easy for customers to learn about the business and browse products online.
 
 **Tech Stack:** Frontend – HTML, CSS, JavaScript | Backend – PHP, MySQL | Others – XAMPP, RESTful APIs, Google Map
 
