@@ -185,13 +185,26 @@
 
 .item_description{
     margin: .2em 0 !important;
-    
 }
 
-.item .item_name{
-    font-weight: 700 !important;
-    text-wrap: wrap;
+.item_name {
+    margin: .5em;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 200px;
 }
+
+.item_name:hover {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+} 
 
 .item-card-wrap{
     display: grid;

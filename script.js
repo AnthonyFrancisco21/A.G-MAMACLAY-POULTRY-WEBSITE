@@ -42,12 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
       "index.html": "home-link",
       "products.html": "products-link",
       "about.html": "about-link",
+      "contact.html": "contact-link",
   };
 
   let sidepage = {
       "index.html": "sidebar-home-link",
       "products.html": "sidebar-products-link",
       "about.html": "sidebar-about-link",
+      "contact.html": "sidebar-contact-link",
   };
 
   if (pages[currentPage] && document.getElementById(pages[currentPage])) {

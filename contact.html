@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/about.css">
+    <link rel="stylesheet" href="assets/contact.css">
 
 </head>
 <body>
@@ -57,9 +57,8 @@
                 <li><a href="about.html" id="sidebar-about-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--blackText)"><path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z"/></svg>ABOUT US</a></li>
 
                 <li>
-                    <a href="contact.html" id="sidebar-contact-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--blackText)"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>CONTACT</a>
+                    <a href="contact.htmt" id="sidebar-contact-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--blackText)"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>CONTACT</a>
                 </li>
-
             </ul> 
 
         </nav>
@@ -67,27 +66,34 @@
 
     <div class="overlay"></div>
 
-    <main class="about-main">
+    <main class="contact-main">
 
         <section class="hero-section hero-section-products">
             <div class="hero-section-products-wrap">
-                <h1>Our Store</h1>
-                <p>"Find quality feeds, supplements, and accessories to keep your poultry healthy and productive"</p>
+                <h1>Contact</h1>
+                <p>“We’d love to hear from you! Reach out if you have any questions about our shop.”</p>
             </div>
             
         </section>
 
-        <section class="about-store-section">
-            <div class="about-store-wrap">
-                <div class="about-store-img"></div>
-                <div class="about-store-title-des">
-                    <h1>A.G Mamaclay Poultry Supply</h1>
-                    <!--Location click in Paragraph-->
-                    <p>A.G. Mamaclay Poultry Supplies is a local store in <span>La Paz</span>, dedicated to providing quality poultry feeds, supplements, and farm essentials. Though we started small, we’ve grown into a trusted supplier for backyard farmers, pet owners, and poultry enthusiasts. Our commitment to quality and customer satisfaction has helped us build strong relationships with our community, making us a go-to source for reliable poultry products.</p>
+        <section class="contact-section">
+            <div class="contact-wrap">
+                <form action="send.php" method="POST" class="contact-form">
+                
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
 
-                    <p>To support our store’s growth and make shopping more convenient, I created this website. Here, customers can easily browse our products, stay updated on new arrivals, and connect with us anytime. Through this platform, we aim to make A.G. Mamaclay Poultry Supplies is more accessible while continuing to provide the quality and trust our customers rely on.</p>
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
 
-                </div>
+                    <label for="email">Gmail</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Gmail" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </section>  
 
