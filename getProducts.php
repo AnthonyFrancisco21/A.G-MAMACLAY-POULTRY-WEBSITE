@@ -1,33 +1,45 @@
 <?php
+include("database.php");
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json");
 
-    include("database.php");
-    header("Access-Control-Allow-Origin: *");
-    header("Content-Type: application/json");
+$category = isset($_GET['category']) ? $_GET['category'] : '';
+$name     = isset($_GET['name']) ? $_GET['name'] : '';
 
-    if (isset($_GET['category'])) {
-        $category = $_GET['category'];
-    } else {
-        $category = '';
-    }
+// No filters
+if ($category === '' && $name === '') {
+    $sql = "SELECT * FROM product_tbl WHERE is_deleted = 0";
+    $stmt = $conn->prepare($sql);
 
-    if ($category === '') {
-        $sql = "SELECT * FROM product_tbl WHERE is_deleted = 0";
-        $stmt = $conn->prepare($sql);
-    } else {
-        $sql = "SELECT * FROM product_tbl WHERE categories = ? AND is_deleted = 0";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $category);  
-    }
+// Only category
+} elseif ($category !== '' && $name === '') {
+    $sql = "SELECT * FROM product_tbl WHERE categories = ? AND is_deleted = 0";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $category);
 
-    $stmt->execute();
-    $result = $stmt->get_result();
+// Only name
+} elseif ($category === '' && $name !== '') {
+    $sql = "SELECT * FROM product_tbl WHERE is_deleted = 0 AND product_name LIKE ?";
+    $stmt = $conn->prepare($sql);
+    $like = "%{$name}%";
+    $stmt->bind_param("s", $like);
 
-    $data = [];
+// Both category and name
+} else {
+    $sql = "SELECT * FROM product_tbl 
+            WHERE categories = ? AND is_deleted = 0 AND product_name LIKE ?";
+    $stmt = $conn->prepare($sql);
+    $like = "%{$name}%";
+    $stmt->bind_param("ss", $category, $like);
+}
 
-    while ($row = $result->fetch_assoc()) {
-        $data[] = $row;
-    }
+$stmt->execute();
+$result = $stmt->get_result();
 
-    echo json_encode(["data" => $data]);
-    $conn->close();
-?>
+$data = [];
+while ($row = $result->fetch_assoc()) {
+    $data[] = $row;
+}
+
+echo json_encode(["data" => $data]);
+$conn->close();

@@ -1,6 +1,4 @@
-document.addEventListener('DOMContentLoaded', function (){ 
-    loadData();
-})
+
 
 function toggleMenu() {
     const sideBar = document.querySelector(".side-bar");
@@ -163,7 +161,7 @@ function feedsFunction(){
         const category = this.getAttribute('data-category');
         const data = await getProduct(category)  
         showProducts(data)
-        //backend code here
+        
     }
 
     const categoriesPageBtn = document.querySelectorAll(".categories-btn");
@@ -179,61 +177,4 @@ function feedsFunction(){
 
 feedsFunction();
 
-
-async function loadData(){
-    const data = await getProduct()
-    console.log(data);
-    showProducts(data)
-}
-
-async function getProduct(category = ''){
-
-    try{
-        const fetchdata = await fetch(`getProducts.php?category=${category}`);
-        const jsondata = await fetchdata.json();
-        return jsondata['data'];
-    }
-    catch (error){
-        console.error(error);
-        return [];
-    }
-
-}//getProduct() end
-
-
-async function showProducts(data) {
-    const container = document.querySelector(".item-card-wrap");
-    container.innerHTML = ""; // Clear previous products
-    
-
-    if (!data || data.length === 0) {
-        const itemDiv = document.createElement("div");
-        itemDiv.classList.add("item");
-        itemDiv.innerHTML = `
-            <img src="admin-assets/logo.png" class="item-img" alt="No product available">
-            <p class="item_name">Wow! Such an empty.</p>
-            <p class="item_description">₱0.00</p>
-        `;
-        container.appendChild(itemDiv);
-        return; // so we don't run the forEach on empty array
-    }
-
-    //show products in a card
-    data.forEach((product) => {
-        const itemDiv = document.createElement("div");
-        itemDiv.classList.add("item");
-
-        itemDiv.innerHTML = `
-            <img src=" ../AG_MAMACLAY_DASHBOARD/backend/${product.image_path}" class="item-img" alt="${product.product_name}">
-            <p class="item_name">${product.product_name}</p>
-            <p class="item_description">₱${product.price}</p>
-        `;
-
-        container.appendChild(itemDiv);
-
-        
-
-    });//for each end
-
-}
 
