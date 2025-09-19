@@ -85,3 +85,25 @@
 .contact-form button:hover {
   background: #005fcc;
 }
+
+
+.form-group{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.error{
+    border: 1px solid red;
+}
+
+.error-message, .recaptcha-error-message{
+    font-size: .8rem;
+    font-weight: 300;
+    color: red;
+    font-style: italic;
+}
+
+textarea {
+  resize: vertical;
+}

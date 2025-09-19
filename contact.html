@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/contact.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 <body>
@@ -79,18 +80,35 @@
         <section class="contact-section">
             <div class="contact-wrap">
                 <form class="contact-form">
-                
-                    <label for="firstname">First Name</label>
-                    <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="Full Name" placeholder="Enter your full name" required>
+                        <span class="error-message"></span> 
+                    </div>
 
-                    <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+                    <div class="form-group"> 
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="Email" placeholder="Enter your email, example@gmail.com" required >
+                        <span class="error-message"></span> 
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="Subject" placeholder="Enter subject for your message" required>
+                        <span class="error-message"></span>
+                    </div>
 
-                    <label for="email">Gmail</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your Gmail" required>
-
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="Message" rows="5" placeholder="Write your message here..." required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="form-group-recaptcha">
+                        <div class="g-recaptcha" data-sitekey="6LfF-M4rAAAAAOIavtSHdGQiCUt9OSm8-Cl42Pp6"></div><br>
+                        <span class="recaptcha-error-message"></span>
+                    </div>
+                    
 
                     <button type="button" id="submit_btn">Submit</button>
                     
