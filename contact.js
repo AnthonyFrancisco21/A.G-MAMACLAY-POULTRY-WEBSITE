@@ -51,6 +51,14 @@ addEventListener('DOMContentLoaded', function(){
 
                         })  */
 
+// A helper function to convert FormData to a plain object
+function formDataToObject(formData) {
+    const obj = {};
+    formData.forEach((value, key) => {
+        obj[key] = value;
+    });
+    return obj;
+}
 
 function submit() {
     const btn = document.getElementById('submit_btn');
@@ -60,7 +68,7 @@ function submit() {
         const formGroup = document.querySelectorAll('.form-group');
         let isValid = true;
 
-        //Inputs validation
+        // Inputs validation
         formGroup.forEach((item) => {
             const field = item.querySelector('input, textarea');
             const errorMessage = item.querySelector('.error-message');
@@ -71,7 +79,6 @@ function submit() {
                     field.classList.add('error');
                     isValid = false;
                 } else {
-                    
                     if (field.type === "email" && !field.value.endsWith("@gmail.com")) {
                         errorMessage.textContent = "Email must end with @gmail.com.";
                         field.classList.add('error');
@@ -84,7 +91,7 @@ function submit() {
             }
         });
 
-        //Validate reCAPTCHA separately
+        // Validate reCAPTCHA separately
         let recaptchaResponse = grecaptcha.getResponse();
         const recError = document.querySelector('.recaptcha-error-message');
 
@@ -96,20 +103,86 @@ function submit() {
         }
 
         if (isValid) {
+            // Get all form data as a FormData object
             const formData = new FormData(form);
-            formData.append("g-recaptcha-response", grecaptcha.getResponse());
 
-            for (let [key, value] of formData.entries()) {
-                console.log(`${key}: ${value}`);
-            }
-            
+            // Convert formData to a plain object
+            const formDataObj = formDataToObject(formData);
+
+            // Add the reCAPTCHA response to the object
+            formDataObj['g-recaptcha-response'] = recaptchaResponse;
+
+            console.log(formDataObj);
+            saveMessage(formDataObj);
         }
     });
 }
 
+async function saveMessage(formDataObj) {
+    console.log(`In function:`, formDataObj);
 
-function saveMessage(){
+    Swal.fire({
+        title: "Sending...",
+        text: "Please wait",
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
 
+    try {
+        const res = await fetch('sendMessage.php', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            
+            body: JSON.stringify(formDataObj)
+        });
 
+        if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
+        const result = await res.json();
+
+        if (result.success) {
+            Swal.close();
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: `${result.message}`,
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            const form = document.querySelector('.contact-form');
+            if (form) {
+                form.reset();
+            }
+
+            // reset captcha
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.reset();
+            }
+        } else {
+            Swal.close();
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: `${result.message}`,
+                showConfirmButton: false,
+                timer: 5000
+            });
+        }
+    } catch (err) {
+        Swal.close();
+        Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: `Something went wrong, please try again! ${err.message || ''}`,
+            showConfirmButton: false,
+            timer: 5000
+        });
+    }
 }
